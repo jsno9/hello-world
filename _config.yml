@@ -1,7 +1,7 @@
-title:            sven
+title:            jason
 description:      "BLOGGING ME"
 logo:             logo.png
-disqus_shortname: sven
+disqus_shortname: jason
 share:            false
 dropcap:          true
 # Change url to your domain. Leave localhost server or blank when working locally.
@@ -12,7 +12,7 @@ url:              ""
 # Owner/author information
 owner:
   name:           jason
-  avatar:         sven.jpg
+  avatar:         jason.jpg
   email:          jsno9@163.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:   实迷途其未远，觉今是而昨非
