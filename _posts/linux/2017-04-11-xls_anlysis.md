@@ -16,19 +16,21 @@ comments: false
 1. 使用第三方库libxl(http://www.libxl.com/)
 
 2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis
-{		
-	BookHandle book = xlCreateBook();	//新建一个handle
-	if(book) 
-	{
-		printf("book ok\n");
-		if(xlBookLoad(book, "thermal1.xls"))	//打开需要解析的xls文件 	
+/**/
+	void readxls()
+	{		
+		BookHandle book = xlCreateBook();	//新建一个handle
+		if(book) 
 		{
-			printf("xlBookLoad ok\n");
-			SheetHandle sheet = xlBookGetSheet(book, 1);	//xls文件一般有过个sheet，选择需要解析的sheet
-			const char* s = xlSheetReadStr(sheet, x, y, 0);	//读取xls文件指定sheet中指定行列中数据
+			printf("book ok\n");
+			if(xlBookLoad(book, "thermal1.xls"))	//打开需要解析的xls文件 	
+			{
+				printf("xlBookLoad ok\n");
+				SheetHandle sheet = xlBookGetSheet(book, 1);	//xls文件一般有过个sheet，选择需要解析的sheet
+				const char* s = xlSheetReadStr(sheet, x, y, 0);	//读取xls文件指定sheet中指定行列中数据
+			}
 		}
 	}
-}
 + 这是一个最最简单的xls的读取
 
 ###4.python实现xlx文件解析
