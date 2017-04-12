@@ -35,7 +35,7 @@ comments: false
 
 + 这是一个最最简单的xls的读取
 
-###4.python实现xlx文件解析
+###3.python实现xlx文件解析
 1. 依然要使用第三方的python库，xlrd，下载xlrd并且安装
 
 2. 具体使用用例请看https://github.com/jsno9/public/tree/master/python/xlsanalysis
