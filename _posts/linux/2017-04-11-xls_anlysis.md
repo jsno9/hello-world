@@ -16,7 +16,7 @@ comments: false
 1. 使用第三方库libxl(http://www.libxl.com/)
 
 2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis  
-/**/
+
 	void readxls()
 	{		
 		......
@@ -33,6 +33,7 @@ comments: false
 		}
 		......
 	}
+
 	//新建一个handle
 	//打开需要解析的xls文件 
 	//xls文件一般有过个sheet，选择需要解析的sheet
@@ -41,7 +42,7 @@ comments: false
 	static int __netif_receive_skb_core(struct sk_buff *skb, bool pfmemalloc)
 	{
 		......
-		if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||
+		if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||aa
 	    		skb->protocol == cpu_to_be16(ETH_P_8021AD)) {
 			skb = vlan_untag(skb);
 			......
