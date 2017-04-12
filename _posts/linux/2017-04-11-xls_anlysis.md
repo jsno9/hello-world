@@ -19,6 +19,7 @@ comments: false
 /**/
 	void readxls()
 	{		
+		......
 		BookHandle book = xlCreateBook();	
 		if(book) 
 		{
@@ -30,6 +31,7 @@ comments: false
 				const char* s = xlSheetReadStr(sheet, x, y, 0);	
 			}
 		}
+		......
 	}
 	//新建一个handle
 	//打开需要解析的xls文件 
