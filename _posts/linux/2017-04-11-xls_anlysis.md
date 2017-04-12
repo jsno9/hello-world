@@ -37,7 +37,26 @@ comments: false
 	//打开需要解析的xls文件 
 	//xls文件一般有过个sheet，选择需要解析的sheet
 	//读取xls文件指定sheet中指定行列中数据
-	
+
+static int __netif_receive_skb_core(struct sk_buff *skb, bool pfmemalloc)
+	{
+		......
+		if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||
+	    		skb->protocol == cpu_to_be16(ETH_P_8021AD)) {
+			skb = vlan_untag(skb);
+			......
+		}
+		.....
+		if (vlan_tx_tag_present(skb)) {
+			......
+			if (vlan_do_receive(&skb))
+				goto another_round;
+			......
+		}
+		......
+		rx_handler = rcu_dereference(skb->dev->rx_handler);
+			......
+	}
 
 + 这是一个最最简单的xls的读取
 
