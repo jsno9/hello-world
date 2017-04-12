@@ -15,50 +15,21 @@ comments: false
 ###2.linux c实现xls文件解析
 1. 使用第三方库libxl(http://www.libxl.com/)
 
-2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis  
+2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis
 
-下面一段代码解析xls  
-
-	void readxls()
-	{
-		......
-		BookHandle book = xlCreateBook();
-		if(book)
+截取其中解析xls的代码
+	{		
+		BookHandle book = xlCreateBook();	
+		if(book) 
 		{
 			printf("book ok\n");
-			if(xlBookLoad(book, "thermal1.xls"))		
+			if(xlBookLoad(book, "thermal1.xls"))	//打开需要解析的xls文件 	
 			{
 				printf("xlBookLoad ok\n");
-				SheetHandle sheet = xlBookGetSheet(book, 1);	
-				const char* s = xlSheetReadStr(sheet, x, y, 0);	
+				SheetHandle sheet = xlBookGetSheet(book, 1);	//xls文件一般有过个sheet，选择需要解析的sheet
+				const char* s = xlSheetReadStr(sheet, x, y, 0);	//读取xls文件指定sheet中指定行列中数据
 			}
 		}
-		......
-	}
-
-	//新建一个handle
-	//打开需要解析的xls文件 
-	//xls文件一般有过个sheet，选择需要解析的sheet
-	//读取xls文件指定sheet中指定行列中数据
-
-	static int __netif_receive_skb_core(struct sk_buff *skb, bool pfmemalloc)
-	{
-		......
-		if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||aaaa
-	    		skb->protocol == cpu_to_be16(ETH_P_8021AD)) {
-			skb = vlan_untag(skb);
-			......
-		}
-		.....
-		if (vlan_tx_tag_present(skb)) {
-			......
-			if (vlan_do_receive(&skb))
-				goto another_round;
-			......
-		}
-		......
-		rx_handler = rcu_dereference(skb->dev->rx_handler);
-			......
 	}
 
 + 这是一个最最简单的xls的读取
