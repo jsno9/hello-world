@@ -18,10 +18,10 @@ comments: false
 2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis  
 
 	void readxls()
-	{		
+	{
 		......
-		BookHandle book = xlCreateBook();	
-		if(book) 
+		BookHandle book = xlCreateBook();
+		if(book)
 		{
 			printf("book ok\n");
 			if(xlBookLoad(book, "thermal1.xls"))		
