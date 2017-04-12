@@ -19,18 +19,24 @@ comments: false
 /**/
 	void readxls()
 	{		
-		BookHandle book = xlCreateBook();	//新建一个handle
+		BookHandle book = xlCreateBook();	
 		if(book) 
 		{
 			printf("book ok\n");
-			if(xlBookLoad(book, "thermal1.xls"))	//打开需要解析的xls文件 	
+			if(xlBookLoad(book, "thermal1.xls"))		
 			{
 				printf("xlBookLoad ok\n");
-				SheetHandle sheet = xlBookGetSheet(book, 1);	//xls文件一般有过个sheet，选择需要解析的sheet
-				const char* s = xlSheetReadStr(sheet, x, y, 0);	//读取xls文件指定sheet中指定行列中数据
+				SheetHandle sheet = xlBookGetSheet(book, 1);	
+				const char* s = xlSheetReadStr(sheet, x, y, 0);	
 			}
 		}
 	}
+	//新建一个handle
+	//打开需要解析的xls文件 
+	//xls文件一般有过个sheet，选择需要解析的sheet
+	//读取xls文件指定sheet中指定行列中数据
+	
+
 + 这是一个最最简单的xls的读取
 
 ###4.python实现xlx文件解析
