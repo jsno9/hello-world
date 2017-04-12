@@ -15,7 +15,7 @@ comments: false
 ###2.linux c实现xls文件解析
 1. 使用第三方库libxl(http://www.libxl.com/)
 
-2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis
+2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis  
 /**/
 	void readxls()
 	{		
@@ -38,7 +38,7 @@ comments: false
 	//xls文件一般有过个sheet，选择需要解析的sheet
 	//读取xls文件指定sheet中指定行列中数据
 
-static int __netif_receive_skb_core(struct sk_buff *skb, bool pfmemalloc)
+	static int __netif_receive_skb_core(struct sk_buff *skb, bool pfmemalloc)
 	{
 		......
 		if (skb->protocol == cpu_to_be16(ETH_P_8021Q) ||
