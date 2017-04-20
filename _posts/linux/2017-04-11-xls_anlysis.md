@@ -13,9 +13,9 @@ comments: false
 做项目的过程中需要与其他部门沟通，会push其他部门填表，只要定好表的格式，再结合我们xls解析代码，即可自动化完成xls解析，拿到我们需要的数据，节省人力，减少出错
 
 ###2.linux c实现xls文件解析
-1. 使用第三方库libxl(http://www.libxl.com/)
+1. 使用第三方库[libxl](http://www.libxl.com/)
 
-2. 具体举例请看https://github.com/jsno9/public/tree/master/tools/xlsanalysis
+2. 具体举例请看[https://github.com/jsno9/public/tree/master/tools/xlsanalysis](https://github.com/jsno9/public/tree/master/tools/xlsanalysis)
 
 截取其中解析xls的代码
 
@@ -38,4 +38,4 @@ comments: false
 ###3.python实现xlx文件解析
 1. 依然要使用第三方的python库，xlrd，下载xlrd并且安装
 
-2. 具体使用用例请看https://github.com/jsno9/public/tree/master/python/xlsanalysis
+2. 具体使用用例请看[https://github.com/jsno9/public/tree/master/python/xlsanalysis](https://github.com/jsno9/public/tree/master/python/xlsanalysis)
