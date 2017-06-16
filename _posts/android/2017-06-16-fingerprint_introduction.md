@@ -19,4 +19,4 @@ comments: false
 
 ###2.指纹使用的软件流程简介
 
-![fingerprint view](/images/linux/fingerprintview.png)
+![fingerprint view](/images/android/fingerprintview.png)
