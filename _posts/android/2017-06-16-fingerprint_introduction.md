@@ -3,7 +3,7 @@ layout: post
 title: "android指纹简介"
 description:
 category: android
-tags: [android]
+tags: [android, fingerprint]
 mathjax: 
 chart:
 comments: false
@@ -33,8 +33,7 @@ comments: false
 ###3.每层代码结构
 
 介绍一下每层代码结构，framwork层详细的代码流程及接口会在后续文章中介绍
-
-+ framework层：1
++ framework层：
 frameworks/base/services/core/java/com/android/server/fingerprint/FingerprintService.java中onstart调用IFingerprintDaemon daemon = getFingerprintDaemon();在 getFingerprintDaemon()调用openhal()，在这里就会调用到hal层。
 
 + hal层：
