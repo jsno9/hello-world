@@ -19,4 +19,6 @@ comments: false
 
 ###2.指纹使用的软件流程简介
 
-![fingerprint view](/images/android/fingerprintview.png)
+先来看图， ELF文件结构的两种视图：
+![fingerprint view](https://github.com/jsno9/jsno9.github.io/tree/master/images/android/fingerprintview.png)
+
