@@ -2,7 +2,7 @@
 layout: post
 title: "android指纹简介"
 description:
-category: android fingerprint
+category: android
 tags: [android]
 mathjax: 
 chart:
