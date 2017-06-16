@@ -30,3 +30,17 @@ comments: false
 + ta(tz)是在trust zone中的app，trust zone是一块独立于cpu的soc，常见的是conrtex-m3的芯片，是负责系统安全的模块，像指纹信息这样的安全度要求很高的信息会被存储在tz中。
 + hw，有汇顶，新思的等公司的模块。
 
+###3.每层代码结构
+
++ framework层：
+	frameworks/base/services/core/java/com/android/server/fingerprint/FingerprintService.java中onstart调用IFingerprintDaemon daemon = getFingerprintDaemon();在 getFingerprintDaemon()调用openhal()，在这里就会调用到hal层。
+
++ hal层：
+	在开机时会起两个service，一个是gx_fpd,另一个是fingerprintd。fingerprintd调用到system/core/fingerprintd中Fingerprintd.cpp中main函数android::IPCThreadState::self()->joinThreadPool();开一个线程。
+system/core/fingerprintd中FingerprintDaemonProxy.cpp，FingerprintDaemonProxy::openHal()中调用hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_module)，然后mModule->common.methods->open(hw_module, NULL, &device)。从这里开始，hw_module是厂商给的fingerprint.default.so中实现。hal层厂商给了一个service，gx_fpd,由于没有source，根据log分析，1)首先会打开设备节点，2)与驱动层建立联系，并且通过ioctl获取设备信息(driver/fingerprint/goodixgf3208/platform.c)，配置irq，clock，power等。3)与指纹ta建立联系，调用ta_init等。
+
++ kernel层：
+	init:创建/sys/class/goodix 以及字符设备goodix_fp_spi给上层提供ioctl使用,netlink_init(),netlink初始化，为了与上层通信使用 
+	probe:首先device_creat()创建/sys/class/goodix/goodix_fp节点，分配input设备,gf_dev->input = input_allocate_device();注册iput，gf_reg_key_kernel();注册notifier，在完成注册之后，会调用fb_register_client(&gf_dev->notifier);在framebuff有异常出发时调用callback。
+	NOTE：在此体现出使用netlink作为kernel与user space之间通信的优势，可以让kernel作为通信的发起端。而诸如ioctl这样的都只是由user space作为通信的发起端。
+
