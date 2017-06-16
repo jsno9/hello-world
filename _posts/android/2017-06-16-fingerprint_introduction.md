@@ -10,6 +10,7 @@ comments: false
 ---
 
 ###1.指纹识别简介
+
 指纹识别是在Android6.0之后新增的功能，使用指纹的主要有两种场景：
 
 + 本地使用。即用户本地使用指纹，不需要与远端服务器交互。比如指纹解锁手机。
@@ -18,6 +19,7 @@ comments: false
 由于使用指纹识别功能需要一个加密对象，该对象一般是由对称加密或者非对称加密获得。本地使用指纹识别功能，只需要对称加密。远端交互使用指纹识别功能需要非对称加密，将私钥用于本地指纹识别，识别成功后加密信息传给远端服务器，服务器使用公钥解密，获取用户信息。
 
 ###2.指纹使用的软件流程简介
+
 先来看图， 以下是fingerprint流程图：
 
 ![fingerprint view](https://raw.githubusercontent.com/jsno9/jsno9.github.io/master/images/android/fingerprintview.png)
@@ -32,6 +34,7 @@ comments: false
 流程图介绍
 
 ###3.每层代码结构
+
 介绍一下每层代码结构，framwork层详细的代码流程及接口会在后续文章中介绍
 
 1. 第一层
