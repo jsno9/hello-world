@@ -36,11 +36,11 @@ comments: false
 
 介绍一下每层代码结构，framwork层详细的代码流程及接口会在后续文章中介绍
 
-1. framework
+1. 第一层
 
-2. hal
+2. 第二层
 
-3. kernel
+3. 第三层
 
 
 
