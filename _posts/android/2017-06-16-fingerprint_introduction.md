@@ -33,8 +33,7 @@ comments: false
 ###3.每层代码结构
 
 介绍一下每层代码结构，framwork层详细的代码流程及接口会在后续文章中介绍
-+ framework层：
-frameworks/base/services/core/java/com/android/server/fingerprint/FingerprintService.java中onstart调用IFingerprintDaemon daemon = getFingerprintDaemon();在 getFingerprintDaemon()调用openhal()，在这里就会调用到hal层。
++ framework层：frameworks/base/services/core/java/com/android/server/fingerprint/FingerprintService.java中onstart调用IFingerprintDaemon daemon = getFingerprintDaemon();在 getFingerprintDaemon()调用openhal()，在这里就会调用到hal层。
 
 + hal层：
 在开机时会起两个service，一个是gx_fpd,另一个是fingerprintd。fingerprintd调用到system/core/fingerprintd中Fingerprintd.cpp中main函数android::IPCThreadState::self()->joinThreadPool();开一个线程。
