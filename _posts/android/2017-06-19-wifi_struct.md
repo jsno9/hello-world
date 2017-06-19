@@ -20,7 +20,7 @@ wifi service	:frameworks/opt/net/wifi/service/java/com/android/server/wifi
 
 ###2 framework层调用到wpa_supplicant全过程
 
-1. 以scan举例
+####2.1. 以scan举例
 
 frameworks/opt/net/wifi/service/java/com/android/server/wifi/WifiStateMachine.java中
 
@@ -68,7 +68,7 @@ frameworks/opt/net/wifi/service/java/com/android/server/wifi/WifiNative.java中
 		if (send(ctrl->s, _cmd, _cmd_len, 0) < 0) 
 	}
 
-2. 直接下cmd，wpa_cli -p /data/misc/wifi/sockets -i wlan0 scan的调用栈
+####2.2. 直接下cmd，wpa_cli -p /data/misc/wifi/sockets -i wlan0 scan的调用栈
 
 在wpa_cli.c中，main函数中
 
