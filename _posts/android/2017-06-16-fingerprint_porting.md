@@ -46,7 +46,5 @@ class late_start
 user system
 group system
 oneshot
-
 2. fingerpint的log，qseelog以及logcat。需要给机台手动烧录persist.img。
-
 3. debug初期，先关闭selinux，流程跑通后，再打开selinux去配置te文件。
