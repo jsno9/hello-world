@@ -36,17 +36,18 @@ driver的移植，把厂商给的driver放入kernel/driver/fingerprint/中，添
 ###3. debug
 
 1. debug初期，init.qcom.rc中加入oneshot，方便调试
+
 service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group system
-   oneshot
+class late_start
+user system
+group system
+oneshot
 
 service gx_fpd /system/bin/gx_fpd
-   class late_start
-   user system
-   group system
-   oneshot
+class late_start
+user system
+group system
+oneshot
 
 2. fingerpint的log，qseelog以及logcat。需要给机台手动烧录persist.img。
 
