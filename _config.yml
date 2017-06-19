@@ -15,7 +15,7 @@ owner:
   avatar:         jason.jpeg
   email:          jsno9@163.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:   遇到问题，然后解决它
+  description:   while(1){遇到问题，解决问题}
   # Social networking links used in footer. Update and remove as you like.
   #twitter:        
   #facebook:       
